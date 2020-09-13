@@ -29,13 +29,15 @@ export default {
   methods: {
     signIn () {
       firebaseAuth
-        .signInWithEmailAndPassword(this.email, this.password)
-        .then(
-          (user) => {},
-          (err) => {
-            alert('Oops. ' + err.message)
-          }
-        )
+        .signInWithEmailAndPassword(this.email, this.password).catch(function(error) {
+          // Handle Errors here.
+          var errorMessage = error.message;
+
+          window.alert("Error : " + errorMessage);
+
+          // ...
+        });
+
     }
   },
   watch: {

@@ -92,7 +92,7 @@ export default {
     },
     handleImageAdded (file, Editor, cursorLocation) {
       let uploadTask = firestorage.ref('images/' + file.name).put(file)
-      uploadTask.on('state_changed', snapshot => {
+      uploadTask.on('state_changed', {
       }, error => {
         console.error(`Upload error occured: ${error}`)
       }, () => {
