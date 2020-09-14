@@ -43,7 +43,7 @@ export default {
     if (this.getKey !== '') this.oldImgUrl = this.getImgUrl
   },
   computed: {
-    ...mapGetters(['getKey', 'getTitle', 'getContent', 'getImgUrl', 'getWriter', 'getUser']),
+    ...mapGetters(['getKey', 'getTitle', 'getContent', 'getImgUrl']),
     title: {
       get () {
         return this.getTitle
@@ -78,7 +78,6 @@ export default {
             seconds: new Date().getTime(),
             nanoseconds: 0
           },
-          writer: this.getUser.displayName || this.writer,
           imgUrl: this.imgUrl || this.getImgUrl,
           show: true
         })
