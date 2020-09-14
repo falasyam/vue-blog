@@ -42,7 +42,7 @@ export default {
   },
   watch: {
     user (user) {
-      if (user) this.$router.replace('/')
+      if (user) this.$router.replace('/admin')
     }
   }
 }

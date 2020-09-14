@@ -1,4 +1,6 @@
 <template>
+<v-col>
+  <BarAdmin/>
   <v-col cols="12" md="7" offset-md="1">
     <v-form>
       <v-text-field
@@ -18,9 +20,11 @@
       <v-btn @click="savePost">save</v-btn>
     </v-row>
   </v-col>
+</v-col>
 </template>
 
 <script>
+import BarAdmin from '@/components/BarAdmin.vue'
 import { VueEditor } from 'vue2-editor'
 import { firestore } from '@/firebase/firestore'
 import { firestorage } from '@/firebase/firestorage'
@@ -30,6 +34,7 @@ import * as types from '@/vuex/mutation_types'
 
 export default {
   components: {
+    BarAdmin,
     VueEditor,
     FileUploader
   },
@@ -81,7 +86,7 @@ export default {
           imgUrl: this.imgUrl || this.getImgUrl,
           show: true
         })
-        .then(() => this.$router.push('/'))
+        .then(() => this.$router.push('/admin'))
         .catch((error) => {
           console.error(`Error adding document: ${error}`)
         })

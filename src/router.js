@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import List from '@/views/List.vue'
+import Home from '@/views/Home.vue'
 import PostView from '@/components/PostViewer'
 import Writer from '@/components/Writer'
+import Admin from '@/views/Admin.vue'
 import Login from '@/components/Login'
 import store from '@/vuex/store'
 
@@ -10,7 +11,7 @@ Vue.use(Router)
 
 const requireAuth = () => (from, to, next) => {
   if (store.getters.getUser) return next() // isAuth === true면 페이지 이동
-  next('/') // isAuth === false면 다시 로그인 화면으로 이동
+  next('/login') // isAuth === false면 다시 로그인 화면으로 이동
 }
 
 export default new Router({
@@ -18,16 +19,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'list',
-      component: List
+      name: 'home',
+      component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/admin',
+      name: 'admin',
+      component: Admin,
+      beforeEnter: requireAuth()
     },
     {
       path: '/post/:key',
