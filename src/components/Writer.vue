@@ -1,26 +1,33 @@
 <template>
-<v-col>
+<section>
   <BarAdmin/>
-  <v-col cols="12" md="7" offset-md="1">
-    <v-form>
-      <v-text-field
-        v-model="title"
-        label="Title"
-        required>
-      </v-text-field>
-      <file-uploader v-on:downloadURL="getDownloadUrl" v-bind:oldImgUrl="oldImgUrl" class="mb-4"/>
-    </v-form>
-    <vue-editor
-        id="writer"
-        v-model="content"
-        useCustomImageHandler
-        @imageAdded="handleImageAdded"
-    />
-    <v-row class="fill-height ma-3" align="center" justify="end">
-      <v-btn @click="savePost">save</v-btn>
-    </v-row>
-  </v-col>
-</v-col>
+  <section>
+    <v-container>
+      <v-row no-gutters>
+      <v-col cols="12" md="7" offset-md="1">
+        <div class="py-12"></div>
+        <v-form>
+          <v-text-field
+            v-model="title"
+            label="Title"
+            required>
+          </v-text-field>
+          <file-uploader v-on:downloadURL="getDownloadUrl" v-bind:oldImgUrl="oldImgUrl" class="mb-4"/>
+        </v-form>
+        <vue-editor
+            id="writer"
+            v-model="content"
+            useCustomImageHandler
+            @imageAdded="handleImageAdded"
+        />
+      </v-col>
+        <v-col cols="12" class="fill-height ma-3" align="center" justify="end">
+          <v-btn @click="savePost">save</v-btn>
+        </v-col>
+      </v-row>
+    </v-container>
+  </section>
+</section>
 </template>
 
 <script>

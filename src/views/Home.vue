@@ -49,10 +49,9 @@
                 <span class="display-1 font-weight-bold">Latest News</span>
                 <div class="py-2"></div>
             </v-col>
-            <v-col>
-              <div v-for="(Post, idx) in Posts" :key="idx">
-                <v-col cols="12" md="4">
+                <v-col cols="12" md="4" lg="4" v-for="(Post, idx) in Posts" :key="idx">
                   <v-card
+                    hover
                     class="mx-auto"
                     max-width="344"
                     @click="viewPost(Post)"
@@ -71,9 +70,12 @@
                       <v-btn text @click="viewPost(Post)">Read More</v-btn>
                     </v-card-actions>
                   </v-card>
+                  <div class="py-2"></div>
                 </v-col>
-              </div>
-            </v-col>
+                <v-col cols="12" align="center" justify="center">
+                  <div class="py-2"></div>
+                  <span><router-link to="/blog" class="font-weight-bold purple--text">All News</router-link></span>
+                </v-col>
           </v-row>
         </v-container>
         <v-container>
@@ -234,5 +236,9 @@ import _ from 'lodash'
    -moz-filter: none;
    -ms-filter: none;
    filter: none;
+  }
+
+  a {
+    text-decoration: none;
   }
 </style>

@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/views/Home.vue'
-import PostView from '@/components/PostViewer'
+import Edit from '@/components/PostViewer'
 import Writer from '@/components/Writer'
 import Admin from '@/views/Admin.vue'
+import Blog from '@/views/Blog.vue'
+import Article from '@/views/Article.vue'
 import Login from '@/components/Login'
 import store from '@/vuex/store'
 
@@ -20,7 +22,8 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: {title: 'Gracias - Shania Gracia Fanbase'}
     },
     {
       path: '/admin',
@@ -29,9 +32,21 @@ export default new Router({
       beforeEnter: requireAuth()
     },
     {
+      path: '/blog/',
+      name: 'Blog',
+      component: Blog,
+      meta: {title: 'Gracias - News'}
+    },
+    {
       path: '/post/:key',
       name: 'post',
-      component: PostView
+      component: Article,
+      meta: {title: 'Gracias - News'}
+    },
+    {
+      path: '/edit/:key',
+      name: 'edit',
+      component: Edit
     },
     {
       path: '/writer',

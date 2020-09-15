@@ -5,11 +5,11 @@
         app
         flat
       >
-        <v-btn icon color="#8e44ad" href="https://www.shaniagracia.my.id"><v-icon color="#8e44ad">mdi-arrow-left</v-icon></v-btn>
+        <v-btn icon color="#8e44ad" href="/"><v-icon color="#8e44ad">mdi-arrow-left</v-icon></v-btn>
         <div class="pa-1"></div>
         <div
             :class="{'display-5 font-weight-medium': $vuetify.breakpoint.smAndUp,'title font-weight-medium': $vuetify.breakpoint.smAndDown, }"
-          ><span class="purple--text">Gracias</span></div>
+        ><span class="purple--text">Gracias</span></div>
         <v-spacer></v-spacer>
           <v-toolbar-items class="text-right" id="menu">
           </v-toolbar-items>
