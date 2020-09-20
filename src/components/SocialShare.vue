@@ -3,7 +3,7 @@
     <span>Share to your friends!</span>
     <div class="social-share-button">
       <a
-        :href="`https://web.whatsapp.com/send?text=${data.title}+:+${data.url}`"
+        :href="`https://web.whatsapp.com/send?text=${data.url}`"
         class="whatsapp"
         target="_blank"
       >
@@ -11,7 +11,7 @@
       </a>
       <span class="">⠀</span>
       <a
-        :href="`https://t.me/share/url?url=${data.url}&text=${data.title}`"
+        :href="`https://t.me/share/url?url=${data.url}`"
         class="telegram"
         target="_blank"
       >
@@ -30,7 +30,7 @@
         <template v-slot:activator="{ on }">
           <a
             v-on="on"
-            :href="`https://twitter.com/intent/tweet?url=${data.url}&text=${data.title}`"
+            :href="`https://twitter.com/intent/tweet?url=${data.url}`"
             class="twitter"
             target="_blank"
           >
