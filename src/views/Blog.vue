@@ -53,11 +53,13 @@
           </v-row>
         </v-container>
         </section>
+        <Footer/>
     </section>
 </template>
 
 <script>
 import BlogBar from '../components/BlogBar'
+import Footer from '../components/Footer'
 
 import { firestore } from '@/firebase/firestore'
 import { mapMutations } from 'vuex'
@@ -67,6 +69,7 @@ import _ from 'lodash'
 export default {
     components: {
         BlogBar,
+        Footer,
     },
     data () {
       return {

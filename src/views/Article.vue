@@ -64,6 +64,7 @@
                 </v-col>
         </v-row>
         </section>
+        <Footer/>
     </section>
 </template>
 
@@ -75,12 +76,14 @@ import _ from 'lodash'
 import Disqus from '../components/Disqus'
 import deleteDialog from '../components/DeleteDialog'
 import SocialShare from '../components/SocialShare'
+import Footer from '../components/Footer'
 
 export default {
   components: {
     SocialShare,
     Disqus,
-    deleteDialog
+    deleteDialog,
+    Footer
   },
   metaInfo() {
         return {

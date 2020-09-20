@@ -153,11 +153,15 @@
             </v-col>
           </v-row>
         </v-container>
+        <section>
+          <Footer/>
+        </section>
     </section>
 </template>
 
 <script>
 import AppBar from '../components/AppBar'
+import Footer from '../components/Footer'
 import { firestore } from '@/firebase/firestore'
 import { mapMutations } from 'vuex'
 import * as types from '@/vuex/mutation_types'
@@ -166,6 +170,7 @@ import _ from 'lodash'
   export default {
     components: {
         AppBar,
+        Footer
     },
     data () {
       return {
