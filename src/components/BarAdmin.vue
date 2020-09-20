@@ -8,17 +8,19 @@
         <div class="pa-1"></div>
         <div
             :class="{'display-5 font-weight-medium': $vuetify.breakpoint.smAndUp,'title font-weight-medium': $vuetify.breakpoint.smAndDown, }"
-          ><span class="purple--text">Admin Gracias</span></div>
+          ><span class="purple--text">Admin</span></div>
         <v-spacer></v-spacer>
           <v-toolbar-items class="text-right" id="menu">
             <v-btn
               text
-            ><router-link to="/admin"><span class="purple--text text-decoration-none">Dashboard</span></router-link></v-btn>
+            ><router-link to="/admin"><span class="purple--text text-decoration-none">Home</span></router-link></v-btn>
             <v-btn
               text
             ><router-link v-if="getUser" to="/writer"><span class="purple--text text-decoration-none">New</span></router-link></v-btn>
             <router-link v-if="!getUser" to="/login" class="body-2 font-weight-bold">Login</router-link>
-            <a v-if="getUser" @click="signOut" class="body-2 font-weight-bold">Logout</a>
+            <v-btn
+              text
+            ><a v-if="getUser" @click="signOut" class="body-2 font-weight-bold"><v-icon color="purple">mdi-logout</v-icon></a></v-btn>
           </v-toolbar-items>
       </v-app-bar>
     </v-layout>

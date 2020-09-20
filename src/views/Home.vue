@@ -197,6 +197,7 @@ import _ from 'lodash'
         .collection('Post')
         .where('show', '==', true)
         .orderBy('date', 'desc')
+        .limit(3)
     }
   },
   methods: {
@@ -215,7 +216,7 @@ import _ from 'lodash'
     },
     truncateString (v) {
       return _.truncate(v, {
-        'length': 80
+        'length': 60
       })
     }
   }

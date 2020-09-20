@@ -22,7 +22,9 @@
                 <div class="py-9"></div>
                 <v-col cols="12">
                     <div class="py-2"></div>
-                    <span class="display-1 font-weight-bold">{{ getTitle }}</span>
+                    <span class="judul font-weight-bold">{{ getTitle }}</span><br/>
+                    <v-icon>mdi-account</v-icon><span>SHNGRC</span><span class="">⠀</span>     
+                    <v-icon>mdi-calendar</v-icon><span>{{ new Date(getDate) }}</span>
                 </v-col>
                 <v-col cols="12">
                     <v-chip color="purple">
@@ -38,17 +40,10 @@
                     />
                 </v-col>
                 <v-col>
-                    <b>Penulis: </b>
-                    <span>SHNGRC</span>
-                </v-col>
-                <v-col>
                     <span v-html="imgResizedContent"></span>
                 </v-col>
                 <v-col>
-                    <span>
-                    <b>Date: </b>
-                    <span>{{ new Date(getDate) }}</span>
-                    </span>
+                  <SocialShare/>
                 </v-col>
                 <div v-if="getUser" class="pa-3">
                     <v-row class="fill-height" align="center" justify="end"  >
@@ -79,23 +74,25 @@ import { firestore } from '@/firebase/firestore'
 import _ from 'lodash'
 import Disqus from '../components/Disqus'
 import deleteDialog from '../components/DeleteDialog'
+import SocialShare from '../components/SocialShare'
 
 export default {
   components: {
+    SocialShare,
     Disqus,
     deleteDialog
   },
   metaInfo() {
         return {
-            title: `${this.getTitle}`,
+            title: this.getTitle,
             meta: [
-                { name: 'description', content: 'Connect and follow ' + this.userData.name + ' on Epiloge - ' + this.userData.tagline},
+                { name: 'description', content:  + this.userData.name },
                 { property: 'og:title', content: this.getTitle+''},
                 { property: 'og:site_name', content: 'Gracias'},
                 { property: 'og:description', content:  + this.getContent },
-                {property: 'og:type', content: 'profile'},
-                {property: 'og:url', content: 'https://epiloge.com/post/' + this.getKey},
-                {property: 'og:image', content: this.getImgUrl }    
+                { property: 'og:type', content: 'profile'},
+                { property: 'og:url', content: 'https://fanbase.shaniagracia.my.id/post/' + this.getKey},
+                { property: 'og:image', content: this.getImgUrl }    
             ]
         }
     },
@@ -154,7 +151,23 @@ export default {
 </script>
 
 <style scoped>
-    a {
-        text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+  }
+
+  .judul {
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .garisbawah {
+    text-decoration: underline overline;
+    text-decoration-line: underline overline;
+    text-decoration-color: #7405a1;
+  }
+
+  .blogs {
+    font-size: 20px;
+    letter-spacing: 3px;
+  }
 </style>

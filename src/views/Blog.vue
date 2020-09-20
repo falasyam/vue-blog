@@ -7,7 +7,7 @@
                 <v-row no-gutters>
                     <v-col cols="12" md="12" lg="12" xs="12" sm="12" class="text-center">
                         <div class="py-12"></div>
-                        <span class="display-2 font-weight-bold">News</span>
+                        <span class="display-2 font-weight-bold spasi">News</span>
                     </v-col>
                     <v-col cols="12" md="12" lg="12" xs="12" sm="12" class="text-center">
                         <span class="subtitle-1 font-weight-normal">Berita terbaru dari Gracias dan Shania Gracia</span>
@@ -103,3 +103,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+  .spasi {
+    letter-spacing: 3px;
+  }
+</style>
